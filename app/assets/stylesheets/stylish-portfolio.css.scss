@@ -6,10 +6,6 @@
 
 /* Global Styles */
 
-.portfolio-item1 {
-    background: image-url('chinese2.jpg');
-}
-
 html,
 body {
     width: 100%;
@@ -159,20 +155,24 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    background: image-url('chinese7.jpg');
+    background: image-url('chinese2.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
 
-/* About */
+.header a {
+    color: red;
+}
+
+.header h1,h2,h3,h4,h5,h6 {
+    color: red;
+}
 
 .about {
     padding: 50px 0;
 }
-
-/* Services */
 
 .services {
     padding: 50px 0;
@@ -182,6 +182,18 @@ hr.small {
     margin-bottom: 30px;
 }
 
+#services {
+    background-color: #282828;
+}
+
+#services h1,h2,h3,h4,h5,h6 {
+    color: red;
+}
+
+#aside {
+    background-color: #282828;
+}
+
 /* Callout */
 
 .callout {
@@ -189,14 +201,12 @@ hr.small {
     width: 100%;
     height: 400px;
     color: #fff;
-    background: image-url('callout.jpg') no-repeat center center scroll;
+    background: image-url('chinese3.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
-
-/* Portfolio */
 
 .portfolio {
     padding: 50px 0;
