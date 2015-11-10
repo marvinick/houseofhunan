@@ -15,6 +15,7 @@ class MenusController < ApplicationController
 			redirect_to menu_path(@menu)
 		else
 			flash.now[:alert] = "Menu is not successfully created."
+			render :new
 		end
 	end
 
@@ -29,6 +30,6 @@ class MenusController < ApplicationController
 	end
 
 	def menu_params
-		params.require(:menu).permit(:name, :description, :attachment)
+		params.require(:menu).permit(:name, :description, :attachment, :attachment_cache)
 	end
 end
