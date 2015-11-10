@@ -21,7 +21,7 @@
                 <li class="hidden">
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
-               <li color="red "><%= link_to "Call us: (405) 330-1668" %></li>
+               <li color="red "><%= link_to "(405) 330-1668" %></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -32,24 +32,12 @@
 <br>
 <br>
 <div class="row">
-  <div class="col-md-4">
-    
-    <div class="box2-left">
-      <h3 class="text-center">Appetizers</h3>
+  <%= link_to "New Menu", new_menu_path %>
+  <% @menus.each do |menu| %>
+    <div class="col-md-4">
+      <div class="box2-right">
+        <h3 class="text-center"><%= link_to menu.name, menu_path(menu) %></h3>
+      </div>
     </div>
-  </div>
-
-  <div class="col-md-4">
-    
-    <div class="box2-center">
-      <h3 class="text-center">Dinner</h3>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    
-    <div class="box2-right">
-      <h3 class="text-center">Hunan Specials</h3>
-    </div>
-  </div>
+  <% end %>
 </div>

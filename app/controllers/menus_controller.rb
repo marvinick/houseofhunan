@@ -6,13 +6,13 @@ class MenusController < ApplicationController
 
 	def new
 		@menu = Menu.new
-	end
+	end 
 
 	def create 
 		@menu = Menu.new(menu_params)
 		if @menu.save
 			flash[:notice] = "Menu is successfully created."
-			redirect_to root_path
+			redirect_to menu_path(@menu)
 		else
 			flash.now[:alert] = "Menu is not successfully created."
 		end
@@ -29,6 +29,6 @@ class MenusController < ApplicationController
 	end
 
 	def menu_params
-		params.require(:menu).permit(:name, :description, :price)
+		params.require(:menu).permit(:name, :description, :attachment)
 	end
 end

@@ -16,9 +16,7 @@
 </head>
 
 <body>
-    <% unless root_path %>
-      <%= render "layouts/header" %>
-    <% end %>
+    
     <% flash.each do |key, message| %>
         <div class="alert alert-<%= key %>">
         <%= message %>

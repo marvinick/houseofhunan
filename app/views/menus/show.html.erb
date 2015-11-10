@@ -9,7 +9,7 @@
             </button>
           <ul class="nav navbar-nav">
             <li>
-              <strong><%= link_to "House of Hunan", root_path, class: "navbar-brand" %></strong>
+              <strong><%= link_to "Home", root_path, class: "navbar-brand" %></strong>
             </li>
           </ul>
         </div>
@@ -21,15 +21,16 @@
                 <li class="hidden">
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
-               <li><%= link_to "Call us: (405) 330-1668" %></li>
+               <li><%= link_to "(405) 330-1668" %></li>
                 <% @menus.each do |menu| %>
                <li><%= link_to menu.name, menu_path(menu) %></li>
                <% end %>
+               <% if @menu.attachment.present? %>
+                <p><%= link_to File.basename(@menu.attachment.url), @menu.attachment.url %></p>
+               <% end %>
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
 </nav>
 <br>
 <br>
