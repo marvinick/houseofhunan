@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-	before_action :set_menu, only: [:show]
+	before_action :set_menu, only: [:show, :destroy]
 	def index
 		@menus = Menu.all
 	end
@@ -22,6 +22,12 @@ class MenusController < ApplicationController
 	def show
 		@menus = Menu.all
   end 
+
+  def destroy
+  	@menu.destroy
+  	flash[:notice] = "Menu has been deleted."
+  	redirect_to menus_path
+  end
 
 	private 
 

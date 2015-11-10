@@ -28,6 +28,7 @@
                <% if @menu.attachment.present? %>
                 <p><%= link_to File.basename(@menu.attachment.url), @menu.attachment.url %></p>
                <% end %>
+
             </ul>
         </div>
     </div>
@@ -35,24 +36,7 @@
 <br>
 <br>
 <br>
+<br>
 <div class="container">
-	<div class="row">
-		<div class="col-md-5">
-			<h3>Hunan Specials</h3>
-			<hr>
-			<h4>Lettuce Wrap Chicken . . . . <em>U$ 9.50</em></h4>
-			<em>Chopped Chicken and waterchesnuts served with Lettuce and homemade dipping sauce</em>
-			<br />
-			<h4>Happy Family . . . .         <em>U$ 12.95</em></h4>
-			<em>Combination of seafood and meat specially prepared to bring out the natural flavor in wok</em>
-			<br/>
-			<p>
-		</div>
-		<div class="col-md-2"></div>
-		<div class="col-md-5">
-			<h3>Appetizers</h3> 
-			<hr>
-			<h4>Crab Rangoon (4 pcs) . . . . .<em>U$ 2.95</em></h4>
-			<h4>Garlic Fried Chicken (4 pcs) . . . . <em>U$ 3.95</em></h4>
-	</div>
+  <%= link_to "Delete Menu", menu_path(@menu), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
 </div>
