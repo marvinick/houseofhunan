@@ -18,7 +18,9 @@ class MenusController < ApplicationController
 		end
 	end
 
-	def show; end 
+	def show
+		@menus = Menu.all
+  end 
 
 	private 
 
