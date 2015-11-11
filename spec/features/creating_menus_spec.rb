@@ -8,13 +8,16 @@ RSpec.feature "Users can create lunch menu" do
 	end
 
 	scenario "with valid attributes" do
-		
 		fill_in "Name", with: "Fried Rice" 
-		attach_file "File", "spec/fixtures/chinese.txt"
 		click_button "Create Menu"
 
 		expect(page).to have_content "Menu is successfully created."
-		expect(page).to have_content "chinese.txt"
+	end
+
+	scenario "with invalid attributes" do 
+		click_button "Create Menu"
+
+		expect(page).to have_content "Menu is not successfully created."
 	end
 
 	scenario "persisting file uploads accross form display" do 
@@ -26,6 +29,6 @@ RSpec.feature "Users can create lunch menu" do
 		fill_in "Description", with: "blalala"
 		click_button "Create Menu"
 
-		expect(page).to have_content "chinese.txt"
+		expect(page).to have_content "Menu is successfully created."
 	end
 end

@@ -1,4 +1,4 @@
-<%= simple_form_for @menu do |f| %>
+<%= simple_form_for @menu, :html => {:class=> 'form-login'}  do |f| %> 
 	<%= f.input :name %>
 	<%= f.input :description %>
 	<%= f.input :attachment, as: :file, label: "File" %>

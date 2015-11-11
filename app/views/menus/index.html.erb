@@ -1,43 +1,10 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-          <ul class="nav navbar-nav">
-            <li>
-              <strong><%= link_to "House of Hunan", root_path, class: "navbar-brand" %></strong>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                <li class="hidden">
-                    <a class="page-scroll" href="#page-top"></a>
-                </li>
-               <li color="red "><%= link_to "(405) 330-1668" %></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-<br>
-<br>
-<br>
+<br/>
 <div class="row">
-  <%= link_to "New Menu", new_menu_path %>
+  <center><%= link_to "New Menu", new_menu_path %></center>
   <% @menus.each do |menu| %>
     <div class="col-md-4">
-        <%= link_to (image_tag menu.attachment_url(:thumb).to_s), menu %>
-        <h3 class="text-center"><%= link_to menu.name, menu_path(menu) %></h3>
-        
+        <h4 class="page-header text-center"><%= link_to menu.name, menu_path(menu) %></h4>
+        <center><%= link_to (image_tag menu.attachment_url(:thumb).to_s), menu %></center>
     </div>
   <% end %>
 </div>

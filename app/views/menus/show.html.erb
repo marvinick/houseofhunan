@@ -1,39 +1,57 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-          <ul class="nav navbar-nav">
-            <li>
-              <strong><%= link_to "Home", root_path, class: "navbar-brand" %></strong>
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-dark btn-lg pull-left toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >Home</a>
             </li>
-          </ul>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                <li class="hidden">
-                    <a class="page-scroll" href="#page-top"></a>
-                </li>
-                 <li><%= link_to "(405) 330-1668" %></li>
-                    <% @menus.each do |menu| %>
-                 <li><%= link_to menu.name, menu_path(menu) %></li>
-                 <% end %>
-            </ul>
-        </div>
-    </div>
-</nav>
-<br>
-<br>
-<br>
+            <li><%= link_to "(405) 330-1668" %></li>
+            <% @menus.each do |menu| %>
+              <li><%= link_to menu.name, menu_path(menu) %></li>
+            <% end %>
+        </ul>
+    </nav>
 <br>
 <div class="container">
-  <%= link_to "Delete Menu", menu_path(@menu), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
-  <%= link_to "Edit Menu", edit_menu_path(@menu) %>
+  <h4><%= link_to "Back to Menus", menus_path %><h4>
+  <h4><%= link_to "Edit Menu", edit_menu_path(@menu) %></h4>
+  <h4><%= link_to "Delete Menu", menu_path(@menu), method: :delete, data: { confirm: "Are you sure you want to delete?" } %></h4>
+  
 </div>
+
+<script src="//javascripts/jquery.js"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="//javasripts/bootstrap.min.js"></script>
+
+      <!-- Custom Theme JavaScript -->
+      <script>
+      // Closes the sidebar menu
+      $("#menu-close").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+
+      // Opens the sidebar menu
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+
+      // Scrolls to the selected menu item on the page
+      $(function() {
+          $('a[href*=#]:not([href=#])').click(function() {
+              if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                  var target = $(this.hash);
+                  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                  if (target.length) {
+                      $('html,body').animate({
+                          scrollTop: target.offset().top
+                      }, 1000);
+                      return false;
+                  }
+              }
+          });
+      });
+</script>
