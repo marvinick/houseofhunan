@@ -33,6 +33,9 @@ class MenusController < ApplicationController
 
 	def set_menu
 		@menu = Menu.find(params[:id])
+	rescue ActiveRecord::RecordNotFound
+		flash[:alert] = "The menu you were looking for could not be found."
+		redirect_to menus_path
 	end
 
 	def menu_params
