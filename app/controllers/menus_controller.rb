@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-	before_action :set_menu, only: [:show, :destroy]
+	before_action :set_menu, only: [:show, :edit, :update, :destroy]
 	def index
 		@menus = Menu.all
 	end
@@ -22,6 +22,18 @@ class MenusController < ApplicationController
 	def show
 		@menus = Menu.all
   end 
+
+  def edit; end
+
+  def update 
+  	if @menu.update(menu_params)
+  		flash[:notice] = "Menu has been updated."
+  		redirect_to menu_path(@menu)
+  	else
+  		flash.now[:alert] = "Menu has not been edited."
+  		render :edit
+  	end
+  end
 
   def destroy
   	@menu.destroy
