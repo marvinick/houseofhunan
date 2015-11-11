@@ -9,7 +9,7 @@ RSpec.feature "Users can view food" do
 		FactoryGirl.create(:food, menu: noodle, name: "YULU", description: "old", price: 4)
 
 		visit "/"
-		click_link "Menus"
+		click_link "Menus" 
 	end
 
 	scenario "for a given menu" do 

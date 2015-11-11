@@ -19,6 +19,18 @@ class FoodsController < ApplicationController
 
   def show; end
 
+  def edit; end
+
+  def update 
+    if @food.update(food_params)
+      flash[:notice] = "Food has been updated."
+      redirect_to [@menu, @food]
+    else
+      flash.now[:alert] = "Food has not been updated."
+      render :edit
+    end
+  end
+
   private 
 
   def food_params
