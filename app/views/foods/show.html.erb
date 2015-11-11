@@ -1,2 +1,3 @@
 <%= @food.name %>
 <%= link_to "Edit Food", [:edit, @menu, @food] %>
+<%= link_to "Delete Food", [@menu, @food], method: :delete, data: { confirm: "Are you sure you want to delete?" } %>

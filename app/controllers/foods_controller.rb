@@ -31,6 +31,12 @@ class FoodsController < ApplicationController
     end
   end
 
+  def destroy 
+    @food.destroy
+    flash[:notice] = "Food has been deleted."
+    redirect_to @menu 
+  end
+
   private 
 
   def food_params
