@@ -16,4 +16,5 @@
 !/log/.keep
 /tmp
 public/uploads
+db/seeds.rb
 
