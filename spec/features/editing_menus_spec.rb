@@ -1,9 +1,11 @@
 require "rails_helper"
 
 RSpec.feature "Users can edit existing menus" do 
+	let(:user) { FactoryGirl.create(:user)}
+
 	scenario "with valid attributes" do 
 		FactoryGirl.create(:menu, name: "Fried rice")
-
+		login_as(user)
 		visit "/"
 		click_link "Menus"
 		click_link "Fried rice" 

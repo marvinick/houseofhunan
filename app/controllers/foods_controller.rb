@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
 	before_action :set_menu
 	before_action :set_food, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index]
 
   def new
   	@food = @menu.foods.build
@@ -45,9 +46,15 @@ class FoodsController < ApplicationController
 
   def set_menu
   	@menu = Menu.find(params[:menu_id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The page you were looking for could not be found."
+    redirect_to root_path
   end
 
   def set_food
   	@food = Food.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The page you were looking for could not be found."
+    redirect_to root_path
   end
 end

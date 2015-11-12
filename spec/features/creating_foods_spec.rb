@@ -1,8 +1,11 @@
 require "rails_helper" 
 
 RSpec.feature "Users can create foods" do 
+	let(:user) { FactoryGirl.create(:user)}
+	
 	before do 
 		menu = FactoryGirl.create(:menu, name: "Lunch")
+		login_as(user)
 		visit menu_path(menu)
 		click_link "New Food"
 	end

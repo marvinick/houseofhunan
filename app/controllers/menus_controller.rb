@@ -1,5 +1,6 @@
 class MenusController < ApplicationController
 	before_action :set_menu, only: [:show, :edit, :update, :destroy]
+	before_filter :authenticate_user!, except: [:index, :show]
 	
 	def index
 		@menus = Menu.all

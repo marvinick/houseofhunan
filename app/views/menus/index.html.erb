@@ -5,7 +5,9 @@
             <li class="sidebar-brand">
                 <%= link_to "Home", root_path %>
             </li>
-            <li><%= link_to "New Menu", new_menu_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "New Menu", new_menu_path %></li>
+            <% end %>
             <li><%= link_to "(405) 330-1668" %></li>
   
         </ul>
