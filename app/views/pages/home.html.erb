@@ -6,9 +6,25 @@
             <li class="sidebar-brand">
                 <a href="#top"  onclick = $("#menu-close").click(); >Home</a>
             </li>
+            <% if user_signed_in? %>
+            <li>
+                Signed in as <%= current_user.email %>
+            </li>
+            <li>
+                 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            </li>
+            <% end %>
             <li>
                 <%= link_to "Menus", menus_path %>
             </li>
+            <% unless user_signed_in? %>
+                <li>
+                    <%= link_to "Sign up", new_user_registration_path %>
+                </li>
+                <li>
+                    <%= link_to "Sign in", new_user_session_path %>
+                </li>
+            <% end %>
             <li>
                 <a href="#about" onclick = $("#menu-close").click(); >Reviews</a>
             </li>
