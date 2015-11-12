@@ -3,8 +3,10 @@ require "rails_helper"
 RSpec.feature "Users can delete foods" do 
 	let(:menu) { FactoryGirl.create(:menu) }
 	let(:food) { FactoryGirl.create(:food, menu: menu)}
+	let(:user) { FactoryGirl.create(:user)}
 
 	before do 
+		login_as(user)
 		visit menu_food_path(menu, food)
 	end
 
