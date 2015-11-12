@@ -8,3 +8,7 @@
 
 
 Menu.create(name: "Menu", description: "First draft")
+
+unless User.exists?(email: "bossman@hunan.com")
+	User.create!(email: "bossman@hunan.com", password: "housemaster", admin: true)
+end

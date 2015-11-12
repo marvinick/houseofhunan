@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Users can create lunch menu" do 
 	before do 
+		login_as(FactoryGirl.create(:user, :admin))
 		visit "/"
 		click_link "Menus"
 		click_link "New Menu" 
