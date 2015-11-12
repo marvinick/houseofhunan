@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
   	@food = @menu.foods.build(food_params)
   	if @food.save
   		flash[:notice] = "Food has been created."
-  		redirect_to [@menu, @food]
+  		redirect_to @menu
   	else
   		flash.now[:alert] = "Food has not been created."
   		render :new
