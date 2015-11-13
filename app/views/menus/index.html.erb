@@ -15,13 +15,13 @@
 
 <div class="row"> 
   <% @menus.each do |menu| %>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <h4 class="page-header text-center"><%= link_to menu.name, menu_path(menu) %></h4>
         <center><%= link_to (image_tag menu.attachment_url(:thumb).to_s), menu %></center>
     </div>
   <% end %>
 </div>
-
+<br/>
 <script src="//javascripts/jquery.js"></script>
 
       <!-- Bootstrap Core JavaScript -->

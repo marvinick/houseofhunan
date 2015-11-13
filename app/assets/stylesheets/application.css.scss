@@ -18,6 +18,9 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body {
+  font-family: "Courier New", Times, serif;
+ }
 
 .alert-notice {
   @extend .alert-success;

@@ -1,6 +1,7 @@
-<%= simple_form_for([menu, food])  do |f| %> 
+<%= simple_form_for([menu, food], html: {class: 'form-login'})  do |f| %> 
 	<%= f.input :name %>
 	<%= f.input :description %>
 	<%= f.input :price %>
 	<%= f.button :submit, class: "btn-primary" %>
+	<h5><%= link_to "Back", @menu %></h5>
 <% end %> 
