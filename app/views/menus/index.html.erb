@@ -8,10 +8,13 @@
             <% if user_signed_in? %>
               <li><%= link_to "New Menu", new_menu_path %></li>
             <% end %>
+            <% @menus.each do |menu| %>
+              <li><%= link_to menu.name %></li>
+            <% end %>
         </ul>
     </nav>
 
-
+ 
 <section id="portfolio" class="portfolio">
   <div class="container">
     <div class="row">

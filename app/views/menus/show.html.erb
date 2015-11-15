@@ -5,7 +5,8 @@
             <li class="sidebar-brand">
                 <%= link_to "Home", root_path %>
             </li>
-            <li>Select Menu : </li>
+             <li><%= link_to "MAIN MENU", menus_path %></li>
+             <br>
             <% @menus.each do |menu| %>
               <li><%= link_to menu.name, menu_path(menu) %></li>
             <% end %>
@@ -24,10 +25,10 @@
     <div class="col-md-3">
       <h5 class="text-center"><%= link_to "Delete Menu", menu_path(@menu), method: :delete, data: { confirm: "Are you sure you want to delete?" } %></h5>
     </div>
-    <div class="col-md-3">
-      <h5 class="text-center"><%= link_to "Back to Menus", menus_path %></h5>
-    </div>
   <% end %>
+   <div class="col-md-3">
+     
+    </div>
   <h5 class="page-header text-center">Order : 405 330 1668</h5>
   
   <% @menu.foods.each do |food| %>
