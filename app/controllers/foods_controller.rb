@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
   def new
   	@food = @menu.foods.build
   end
-
+ 
   def create 
   	@food = @menu.foods.build(food_params)
   	if @food.save

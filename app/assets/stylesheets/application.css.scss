@@ -18,9 +18,17 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
 body {
   font-family: "Courier New", Times, serif;
  }
+
+.style_image {
+  padding-left: 5px;
+  padding-topt: 10px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+}
 
 .alert-notice {
   @extend .alert-success;
@@ -46,14 +54,12 @@ body {
 
 .box {
   background-color: white;
-  background: image-url('chinese2.jpg');
+  background: image-url('wok.jpg');
   width: auto;
   height: 300px;
   padding: 10px;
   margin: 30px;
 }
-
-
 
 .form-login {
   max-width: 330px;

@@ -14,7 +14,7 @@ class MenusController < ApplicationController
 		@menu = Menu.new(menu_params)
 		if @menu.save
 			flash[:notice] = "Menu is successfully created."
-			redirect_to menu_path(@menu)
+			redirect_to menus_path
 		else
 			flash.now[:alert] = "Menu is not successfully created."
 			render :new

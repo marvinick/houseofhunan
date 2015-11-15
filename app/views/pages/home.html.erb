@@ -6,14 +6,6 @@
             <li class="sidebar-brand">
                 <a href="#top"  onclick = $("#menu-close").click(); >Home</a>
             </li>
-            <% if user_signed_in? %>
-            <li>
-                Signed in as <%= current_user.email %>
-            </li>
-            <li>
-                 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            </li>
-            <% end %>
             <li>
                 <%= link_to "Menus", menus_path %>
             </li>
@@ -24,7 +16,7 @@
                 <a href="#services" onclick = $("#menu-close").click(); >About</a>
             </li>
             <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Gallery</a>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >Photos</a>
             </li>
             <li>
                 <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
@@ -33,6 +25,14 @@
                 <li>
                     <%= link_to "Sign in", new_user_session_path %>
                 </li>
+            <% end %>
+            <% if user_signed_in? %>
+            <li>
+                 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            </li>
+            <li>
+                <%= current_user.email %>
+            </li>
             <% end %>
         </ul>
     </nav>
@@ -82,7 +82,9 @@
                                 <h4>
                                     <strong>Open 7 days a week</strong>
                                 </h4>
-                                <p>Lunch and dinner.</p>
+                                <p>Sunday - Thursday 11 - 9</p>
+                                <p>Friday 11 - 11</p>
+                                <p>Saturday 4 - 11 </p>
         
                             </div>
                         </div>
@@ -95,7 +97,7 @@
                                 <h4>
                                     <strong>Locally owned</strong>
                                 </h4>
-                                <p>We are your neighbors.</p>
+                                <p>We are your neighbors</p>
         
                             </div>
                         </div>
@@ -108,7 +110,7 @@
                                 <h4>
                                     <strong>Highly Trained Chefs</strong>
                                 </h4>
-                                <p>Our chefs have years of experience in Chinese cooking.</p>
+                                <p>Our chefs have years of experience in Chinese cooking</p>
                 
                             </div>
                         </div>
@@ -119,9 +121,9 @@
                                 <i class="fa fa-lemon-o fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Using fresh products</strong>
+                                    <strong>Using quality products</strong>
                                 </h4>
-                                <p>We only serve the best ingredients.</p>
+                                <p>Our ingredients are fresh</p>
                         
                             </div>
                         </div>
@@ -140,13 +142,12 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
-                <h2 class="text-center">Gallery</h2>
-                <% @menus.each do |menu| %>
-                    <div class="col-md-3">
-                        <h4 class="page-header text-center"><%= link_to menu.name, menu_path(menu) %></h4>
-                        <center><%= link_to (image_tag menu.attachment_url(:thumb).to_s), menu %></center>
-                    </div>
-                <% end %>
+                <div class="span4 offset3">
+                    <h2 class="text-center page-header">Photos</h2>
+                    <% @menus.each do |menu| %>
+                        <%= image_tag menu.attachment_url(:thumb).to_s %>
+                    <% end %>
+                </div>
             </div>
         </div>
     </section>
@@ -187,7 +188,7 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Developed by &copy; Seasalt Labs 2015</p>
+                    <p class="text-muted">Developed &copy; Seasalt Labs 2015</p>
                 </div>
             </div>
         </div>

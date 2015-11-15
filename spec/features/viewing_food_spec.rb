@@ -23,4 +23,4 @@ RSpec.feature "Users can view food" do
 		expect(page).to have_content "YULU"
 		expect(page).to have_content "old"
 	end
-end
+end 

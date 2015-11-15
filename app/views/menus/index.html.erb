@@ -8,20 +8,23 @@
             <% if user_signed_in? %>
               <li><%= link_to "New Menu", new_menu_path %></li>
             <% end %>
-            <li><%= link_to "(405) 330-1668" %></li>
-  
         </ul>
     </nav>
 
-<div class="row"> 
-  <% @menus.each do |menu| %>
-    <div class="col-md-3">
-        <h4 class="page-header text-center"><%= link_to menu.name, menu_path(menu) %></h4>
-        <center><%= link_to (image_tag menu.attachment_url(:thumb).to_s), menu %></center>
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center page-header">Menus</h2>
+     <% @menus.each do |menu| %>
+      
+        <%= link_to (image_tag menu.attachment_url(:thumb).to_s, :class => "style_image"), menu %>
+        
+     <% end %>
     </div>
-  <% end %>
-</div>
-<br/>
+  </div>
+</section>
+
 <script src="//javascripts/jquery.js"></script>
 
       <!-- Bootstrap Core JavaScript -->

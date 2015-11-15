@@ -31,6 +31,9 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  version :show do
+    process :resize_to_fit => [300, 300]
+  end
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fit => [200, 200]

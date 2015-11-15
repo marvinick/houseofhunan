@@ -18,6 +18,7 @@
     <div class="container">
       <% flash.each do |key, message| %>
           <div class="alert alert-<%= key %>">
+            <button class="close" data-dismiss="alert">X</button>
           <%= message %>
         </div>
       <% end %>
