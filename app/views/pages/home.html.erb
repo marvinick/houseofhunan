@@ -27,7 +27,7 @@
                 </li>
             <% end %>
             <% if user_signed_in? %>
-            <li>
+            <li> 
                  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
             </li>
             <li>
@@ -138,18 +138,20 @@
             <h2>Freshly Made</h2>
         </div>
     </aside>
-
+    <br/>
     <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="span4 offset3">
-                    <h2 class="text-center page-header">Photos</h2>
-                    <% @menus.each do |menu| %>
-                        <%= image_tag menu.attachment_url(:thumb).to_s %>
-                    <% end %>
+      <div class="container">
+          <div class="row">
+            <h2 class="text-center page-header">Take a look some of our creations</h2>
+            <% @menus.each do |menu| %>
+            <div class="col-md-4">
+              <div class="span4">
+                 <%= link_to (image_tag menu.attachment_url(:thumb).to_s, :class => "style_image"), menu %>
                 </div>
             </div>
-        </div>
+            <% end %>
+          </div>
+      </div>
     </section>
     <br/>
      <br/>
