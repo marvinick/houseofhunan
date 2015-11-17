@@ -38,4 +38,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  #excon errors solution
+  Excon.defaults[:ssl_ca_path] = Rails.root
+  Excon.defaults[:ssl_verify_peer] = false
 end

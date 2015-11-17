@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # excon line errors solution
+  Excon.defaults[:ssl_ca_path] = Rails.root
+  Excon.defaults[:ssl_verify_peer] = false
 end
