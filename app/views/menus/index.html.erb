@@ -21,7 +21,7 @@
         <% @menus.each do |menu| %>
         <div class="col-md-4">
           <div class="span4">
-             <h3 class="text-center"><%= menu.name %></h3>
+             <h3 class="text-center"><%= link_to menu.name, menu %></h3>
              <%= link_to (image_tag menu.attachment_url(:thumb).to_s, :class => "style_image"), menu %>
             </div>
         </div>
