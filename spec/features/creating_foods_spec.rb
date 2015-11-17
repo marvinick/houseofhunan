@@ -7,7 +7,7 @@ RSpec.feature "Users can create foods" do
 		menu = FactoryGirl.create(:menu, name: "Lunch")
 		login_as(user)
 		visit menu_path(menu)
-		click_link "New Food"
+		click_link "Add Food"
 	end
 
 	scenario "with valid attributes" do 
