@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -9,7 +7,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
     process :set_content_type 
 
   # Choose what kind of storage to use for this uploader:
-  #storage :file
+  # storage :file
    storage :fog
 
   # Override the directory where uploaded files will be stored.
