@@ -16,6 +16,7 @@ gem "devise", "~> 3.4.1"
 gem 'carrierwave-aws'
 gem 'rmagick', "~> 2.15.4"
 gem 'fog'
+gem 'aws-sdk'
 
 group :test do 
 	gem "capybara", "~> 2.4"
