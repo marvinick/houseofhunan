@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Users can view food" do 
-	before do 
+	before do  
 		rice = FactoryGirl.create(:menu, name: "Fried rice")
 		FactoryGirl.create(:food, menu: rice, name: "YOLO", description: "young", price: 5)
 
