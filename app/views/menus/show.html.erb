@@ -27,16 +27,21 @@
     </div>
   <% end %>
    
-  <h5 class="page-header text-center">Order : 405 330 1668</h5>
+  <h5 class="page-header text-center">ORDER (405) 330-1668</h5>
   
-  <% @menu.foods.each do |food| %>
-    <strong><h4><%= food.name %></h4></strong>
-    <em><%= food.description %> . . . <strong><%= food.price %></strong><em>
-    <% if signed_in? %>
-      <em><%= link_to "Show", [@menu, food] %>
-    <% end %>
-  <% end %>
-  
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 text-center">
+      <% @menu.foods.each do |food| %>
+        <h3><%= food.name %></h3>
+        <em><%= food.description %> . . . <strong><%= food.price %></strong><em>
+        <% if signed_in? %>
+          <em><%= link_to "Show", [@menu, food] %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
 </div>
 <br/>
 <script src="//javascripts/jquery.js"></script>
