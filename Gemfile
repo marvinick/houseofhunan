@@ -18,6 +18,7 @@ gem 'carrierwave-aws'
 gem 'rmagick', "~> 2.15.4"
 gem 'fog'
 gem 'aws-sdk'
+gem 'fancybox-rails'
 
 group :test do 
 	gem "capybara", "~> 2.4"
