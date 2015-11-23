@@ -34,7 +34,7 @@
     <div class="col-md-10 text-center">
       <% @menu.foods.each do |food| %>
         <h3><%= food.name %></h3>
-        <em><%= food.description %> . . . <strong><%= food.price %></strong><em>
+        <h5><%= food.description %> . . . <strong><%= food.price %></strong></h5>
         <% if signed_in? %>
           <em><%= link_to "Show", [@menu, food] %>
         <% end %>
